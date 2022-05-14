@@ -4,6 +4,8 @@
 #include <bits/stdc++.h>
 
 class Cont {
+public:
+
 
 };
 
