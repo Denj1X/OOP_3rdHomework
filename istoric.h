@@ -42,9 +42,11 @@ public:
 
     bool operator!=(const istoric &rhs) const;
 
-    void operator=(istoric &rhs);
+    void operator=(const istoric &rhs);
 
     friend std::ostream &operator<<(std::ostream &os, const istoric &istoric);
 };
+///intentionez sa folosesc Object Pool drept un desing pattern
+///trebuie sa vad unde mai exact
 #endif //OOP_ISTORIC_H
 

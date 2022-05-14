@@ -67,7 +67,7 @@ bool istoric::operator!=(const istoric &rhs) const {
     return !(rhs == *this);
 }
 
-void istoric::operator=(istoric &rhs) {
+void istoric::operator=(const istoric &rhs) {
     this->zi = rhs.zi;
     this->luna = rhs.luna;
     this->an = rhs.an;
