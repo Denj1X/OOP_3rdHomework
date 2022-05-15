@@ -2,7 +2,7 @@
 #define OOP_ISTORIC_H
 
 #include <bits/stdc++.h>
-#include <ostream>
+#include <iostream>
 
 class istoric {
 private:
@@ -12,7 +12,6 @@ private:
     std::string tip;
     float suma;
 public:
-    istoric(int zi_, int luna_, int an_, std::string tip_, float suma_);
 
     istoric(const istoric& rhs);
 
@@ -45,8 +44,11 @@ public:
     void operator=(const istoric &rhs);
 
     friend std::ostream &operator<<(std::ostream &os, const istoric &istoric);
+
+    istoric(int zi_, int luna_, int an_, std::string tip_, float suma_) : zi(zi_),
+    luna(luna_), an(an_), tip(tip_), suma(suma_){}
 };
-///intentionez sa folosesc Object Pool drept un desing pattern
+///incerc un Singleton in cadrul clasei istoric
 ///trebuie sa vad unde mai exact
 #endif //OOP_ISTORIC_H
 

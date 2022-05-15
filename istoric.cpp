@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 #include "istoric.h"
 
-
-istoric::istoric(int zi_, int luna_, int an_, std::string tip_, float suma_) : zi(zi_),
-    luna(luna_), an(an_), tip(tip_), suma(suma_){}
-
 istoric::istoric(const istoric& rhs) {
     zi = rhs.zi;
     luna = rhs.luna;
@@ -73,6 +69,7 @@ void istoric::operator=(const istoric &rhs) {
     this->an = rhs.an;
     this->tip = rhs.tip;
     this->suma = rhs.suma;
+
 }
 
 std::ostream &operator<<(std::ostream &os, const istoric &istoric) {
