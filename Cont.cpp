@@ -51,3 +51,4 @@ void Cont::afisare () {
     std::cout<<"CNP: "<<this->CNP<<'\n';
     std::cout<<"Sold: "<<this->sold<<'\n';
 }
+

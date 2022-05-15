@@ -14,6 +14,8 @@ public:
     Cont(int zi, int luna, int an, const std::string &tip, float suma,
          const std::string &cnp, const std::string &detin, const float &sold_);
 
+    Cont();
+
     virtual ~Cont() = default;
 
     const std::string &getCnp() const;
