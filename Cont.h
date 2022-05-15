@@ -2,18 +2,18 @@
 #define OOP_CONT_H
 
 #include <bits/stdc++.h>
-#include <ostream>
 #include "istoric.h"
 
 class Cont: public istoric {
-protected:
+private:
     std::string CNP;
     std::string detinator;
     float sold;
+
+public:
     Cont(int zi, int luna, int an, const std::string &tip, float suma,
          const std::string &cnp, const std::string &detin, const float &sold_);
 
-public:
     virtual ~Cont() = default;
 
     const std::string &getCnp() const;
@@ -30,11 +30,11 @@ public:
 
     void operator = (const Cont &a);
 
-    friend std::ostream &operator>>(std::ostream &is, Cont &cont);
+    friend std::istream &operator>>(std::istream &is, Cont &cont);
 
     friend std::ostream &operator<<(std::ostream &os, const Cont &cont);
 
-    friend void citire(Cont &a);
+    virtual void afisare();
 };
 
 

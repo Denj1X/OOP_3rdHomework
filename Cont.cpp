@@ -35,17 +35,19 @@ void Cont::operator=(const Cont &a) {
     this->sold = a.sold;
 }
 
-std::ostream &operator>>(std::ostream &is, Cont &cont) {
+std::istream &operator>>(std::istream &is, Cont &cont) {
     is >> cont.CNP >> cont.detinator >> cont.sold;
     return is;
-}
-
-void citire(Cont &a) {
-    cin >> a;
 }
 
 std::ostream &operator<<(std::ostream &os, const Cont &cont) {
     os << static_cast<const istoric &>(cont) << " CNP: " << cont.CNP << " detinator: " << cont.detinator << " sold: "
        << cont.sold << '\n';
     return os;
+}
+
+void Cont::afisare () {
+    std::cout<<"Nume si prenume: "<<this->detinator<<'\n';
+    std::cout<<"CNP: "<<this->CNP<<'\n';
+    std::cout<<"Sold: "<<this->sold<<'\n';
 }
