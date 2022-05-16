@@ -37,6 +37,8 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Cont &cont);
 
     virtual void afisare();
+
+    friend void citire(std::istream &is, Cont &a);
 };
 
 

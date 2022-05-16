@@ -52,3 +52,6 @@ void Cont::afisare () {
     std::cout<<"Sold: "<<this->sold<<'\n';
 }
 
+void citire(std::istream &is, Cont &a) {
+    is >> a;
+}
