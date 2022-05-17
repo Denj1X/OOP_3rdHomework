@@ -24,7 +24,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml when changing name here
-add_executable(${PROJECT_NAME} 3rdHomeworkProject.cpp Gestionare_Conturi.cpp)
+add_executable(${PROJECT_NAME} 3rdHomeworkProject.cpp Gestionare_Conturi.cpp tranzactie.cpp tranzactie.h istoric.cpp istoric.h Cont.cpp Cont.h)
 ###############################################################################
 
 # custom compiler flags
