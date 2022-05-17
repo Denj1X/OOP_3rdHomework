@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include "Cont.h"
 
 template <class T> class Gestionare_Conturi {
 private:
