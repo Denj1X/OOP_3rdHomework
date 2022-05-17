@@ -365,4 +365,5 @@ double cont::nouTranzactie() {
         return -t.getSuma();
     if (t.isCredit() || t.isDepunere())
         return t.getSuma();
+    return 0;
 }
