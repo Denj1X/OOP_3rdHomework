@@ -282,6 +282,7 @@ public:
     friend std::istream& operator>>(std::istream&, tranzactie&);
     tranzactie& operator=(tranzactie &);
     tranzactie& operator+=(double);
+    std::string operator[](int) const;
 
     tranzactie();
     tranzactie(const istoric, std::string, std::string, double);
@@ -291,8 +292,27 @@ public:
 
     ///setteri si getteri de siguranta
     const istoric &getDate() const;
-
     void setDate(const istoric &date);
+
+    int getIdTranz() const;
+
+    bool isCredit() const;
+    void setCredit(bool credit_);
+
+    double getSuma() const;
+    void setSuma(double suma_);
+
+    bool isDepunere() const;
+    void setDepunere(bool depunere_);
+
+    bool isRetragere() const;
+    void setRetragere(bool retragere_);
+
+    const std::string &getPrimeste() const;
+    void setPrimeste(const std::string &primeste_);
+
+    const std::string &getTrimite() const;
+    void setTrimite(const std::string &trimite_);
 };
 
 std::ostream& operator<<(std::ostream& out, const tranzactie& t) {
@@ -392,6 +412,15 @@ tranzactie& tranzactie::operator+=(double val) {
     return *this;
 }
 
+std::string tranzactie::operator[](int idx) const {
+    if (idx == 0)
+        return this->trimite;
+    if (idx == 1)
+        return this->primeste;
+    std::cout<<"\nIndex invalid.\n";
+    return "Index invalid";
+}
+
 int tranzactie::contor_id_tranz = 0;
 
 tranzactie::tranzactie(): id_tranz(contor_id_tranz++),  trimite(""),
@@ -448,6 +477,60 @@ const istoric &tranzactie::getDate() const {
 void tranzactie::setDate(const istoric &date_) {
     tranzactie::date = date_;
 }
+
+int tranzactie::getIdTranz() const {
+    return id_tranz;
+}
+
+bool tranzactie::isCredit() const {
+    return credit;
+}
+
+void tranzactie::setCredit(bool credit_) {
+    tranzactie::credit = credit_;
+}
+
+double tranzactie::getSuma() const {
+    return suma;
+}
+
+void tranzactie::setSuma(double suma_) {
+    tranzactie::suma = suma_;
+}
+
+bool tranzactie::isDepunere() const {
+    return depunere;
+}
+
+void tranzactie::setDepunere(bool depunere_) {
+    tranzactie::depunere = depunere_;
+}
+
+bool tranzactie::isRetragere() const {
+    return retragere;
+}
+
+void tranzactie::setRetragere(bool retragere_) {
+    tranzactie::retragere = retragere_;
+}
+
+const std::string &tranzactie::getPrimeste() const {
+    return primeste;
+}
+
+void tranzactie::setPrimeste(const std::string &primeste_) {
+    tranzactie::primeste = primeste_;
+}
+
+const std::string &tranzactie::getTrimite() const {
+    return trimite;
+}
+
+void tranzactie::setTrimite(const std::string &trimite_) {
+    tranzactie::trimite = trimite_;
+}
+
+
 
 
 int main() {
