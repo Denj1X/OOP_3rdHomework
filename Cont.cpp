@@ -133,6 +133,8 @@ cont::cont(int id, int id_tit):id_cont(id), id_titular(id_tit) {
     this->istoric = NULL;
 }
 
+int cont::contor_id_cont = 100;
+
 cont::cont(int id_tit):id_cont(contor_id_cont++), id_titular(id_tit) {
     this->sold = 0;
     this->IBAN = "";
