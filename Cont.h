@@ -6,7 +6,7 @@
 #include "tranzactie.h"
 
 class cont {
-private:
+protected:
     const int id_cont;
     double sold;
     std::string IBAN;

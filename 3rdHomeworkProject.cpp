@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <ostream>
 #include "istoric.h"
 #include "tranzactie.h"
 #include "Cont.h"
@@ -211,7 +212,7 @@ const cont& client::operator[](int idx) const {
     else
     if (idx < 0 || idx >= this->nr_conturi)
         std::cout<<"Index invalid.\n";
-    return cont();
+    return this->conturi[idx];
 }
 
 void client::setNume(std::string n) {
@@ -349,5 +350,55 @@ client::client(): id_client(++counter_id_client), CNP(0) {
     this->total_cash = 0;
 }
 
+class Cont_Curent: public cont {
+public:
+    Cont_Curent(double d, const std::string &string, int i, std::string *string1, float d1, int i1, float *pDouble,
+                float *pDouble1, int i2, tranzactie *tranzactie, int i3) : cont(d, string, i, string1, d1, i1, pDouble,
+                                                                                pDouble1, i2, tranzactie, i3) {}
+
+    Cont_Curent(const cont &cont_) : cont(cont_) {}
+
+    virtual ~Cont_Curent() = default;
+
+    friend std::ostream &operator<<(std::ostream &os, const Cont_Curent &curent) {
+        os << static_cast<const cont &>(curent);
+        return os;
+    }
+};
+
+class Cont_Economie: public cont {
+protected:
+    int zi;
+    int luna;
+    int an;
+public:
+    Cont_Economie(double d, const std::string &string, int i, std::string *string1, float d1, int i1, float *pDouble,
+                  float *pDouble1, int i2, tranzactie *tranzactie, int i3, int zi_, int luna_, int an_) :
+                  cont(d, string, i, string1, d1, i1, pDouble, pDouble1, i2, tranzactie, i3), zi(zi_), luna(luna_), an(an_) {}
+
+    int getAn() const {
+        return an;
+    }
+
+    int getZi() const {
+        return zi;
+    }
+
+    int getLuna() const {
+        return luna;
+    }
+
+    void functia_dobanda(Cont_Economie &kek) {
+        int an_ = kek.getAn();
+        int luna_ = kek.getLuna();
+        int zi_ = kek.getZi();
+
+        ///iau datele din ziua de azi
+        ///si verific daca au trecut 365 de zile
+        ///pentru dobanda respectiva
+    }
+};
+
 int main() {
+    ///RIP meniu
 }
